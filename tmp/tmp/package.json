@@ -1,0 +1,22 @@
+{
+  "name": "eco",
+  "version": "1.0.0",
+  "description": "# app.js: our appliaction entry point # api-routes: application route # config: environment variables # loaders: loaders for startup modules # models: database models # services: business logic # subscribers: async task event handlers # scripts: for long npm scripts",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/ApollonPlain/eco.git"
+  },
+  "author": "ApollonPlain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/ApollonPlain/eco/issues"
+  },
+  "homepage": "https://gitlab.com/ApollonPlain/eco#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
