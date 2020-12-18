@@ -1,9 +1,11 @@
 {
   "name": "eco",
+  "type": "module",
   "version": "1.0.0",
   "description": "# app.js: our appliaction entry point # api-routes: application route # config: environment variables # loaders: loaders for startup modules # models: database models # services: business logic # subscribers: async task event handlers # scripts: for long npm scripts",
   "main": "app.js",
   "scripts": {
+    "start": "nodemon --watch server --exec node --experimental-modules server/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
