@@ -48,8 +48,7 @@ export default function ProductScreen(props) {
                                             </li>
                                             <li>
                                                 Description :
-                            <p>{product.description}</p>
-
+                                                <p>{product.description}</p>
                                             </li>
                                         </ul>
                                     </div>
