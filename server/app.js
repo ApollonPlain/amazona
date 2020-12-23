@@ -17,13 +17,16 @@ mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/amazona', {
 	useCreateIndex: true,
 });
 
-app.get('/', (req, res) => {
-	res.send('Hi!')
-})
 
 app.use('/api/users', userRouter);
 app.use('/api/products', productRouter);
 app.use('/api/orders', orderRouter);
+app.get('/api/config/paypal', (req, res) => {
+	res.send(process.env.PAYPAL_CLIENT_ID || 'sb');
+})
+app.get('/', (req, res) => {
+	res.send('Hi!')
+})
 
 app.use((err, req, res, next) => {
 	res.status(500).send({ message: err.message });
