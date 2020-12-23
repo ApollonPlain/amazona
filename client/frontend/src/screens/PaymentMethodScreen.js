@@ -10,11 +10,10 @@ export default function PaymentMethodScreen(props) {
         props.history.push('/shipping');
     const [paymentMethod, setPaymentMethod] = useState('PayPal');
     const dispatch = useDispatch();
-
     const submitHandler = (e) => {
         e.preventDefault();
         dispatch(savePaymentMethod(paymentMethod));
-        props.history.push("/placeholder");
+        props.history.push("/placeorder");
     }
     return (
         <div>
