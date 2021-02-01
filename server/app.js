@@ -9,13 +9,17 @@ dotenv.config();
 
 const app = express()
 app.use(express.json())
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({ extended: true }))
 
-mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/amazona', {
+console.log(process.env.MONGODB_URL);
+
+mongoose.connect(process.env.MONGODB_URL, {
+	// const res = mongoose.connect(process.env.MONGODB_URL || 'mongodb://mongodb:27017/amazona', {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 	useCreateIndex: true,
-});
+}, function (err) { if (err) throw err; });
+
 
 
 app.use('/api/users', userRouter);
@@ -25,7 +29,7 @@ app.get('/api/config/paypal', (req, res) => {
 	res.send(process.env.PAYPAL_CLIENT_ID || 'sb');
 })
 app.get('/', (req, res) => {
-	res.send('Hi!')
+	res.send('Hello!')
 })
 
 app.use((err, req, res, next) => {

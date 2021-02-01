@@ -1,0 +1,38 @@
+version: "3"
+services:
+  frontend:
+    build:
+      context: ./client/frontend
+      dockerfile: Dockerfile
+    image: amazona-client
+    ports:
+      - "3000:3000"
+    networks:
+      - mern-app
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    image: amazona-server
+    ports:
+      - "5000:5000"
+    networks:
+      - mern-app
+    env_file: ./server/.env
+    depends_on:
+      - mongo
+    container_name: amazona-server
+  mongo:
+    image: mongo:3.6.19-xenial
+    ports:
+      - "27017:27017"
+    networks:
+      - mern-app
+    volumes:
+      - mongo-data:/data/db
+networks:
+  mern-app:
+    driver: bridge
+volumes:
+  mongo-data:
+    driver: local

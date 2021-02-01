@@ -46,6 +46,12 @@ userRouter.post('/register', expressAsyncHandler(async (req, res) => {
     });
 }))
 
+userRouter.get('/', expressAsyncHandler(async (req, res) => {
+    const users = await User.find();
+
+    res.send(users);
+}))
+
 userRouter.get('/:id', expressAsyncHandler(async (req, res) => {
     const user = await User.findById(req.params.id);
     if (user)
