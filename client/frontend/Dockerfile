@@ -5,7 +5,7 @@ RUN mkdir -p /usr/src/app/client
 WORKDIR /usr/src/app/client
 
 COPY package.json ./
-COPY package-lock.json ./
+# COPY package-lock.json ./
 COPY . ./
 
 EXPOSE 3000
