@@ -11,7 +11,9 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
+console.log("------");
 console.log(process.env.MONGODB_URL);
+console.log("------");
 
 mongoose.connect(process.env.MONGODB_URL, {
 	// const res = mongoose.connect(process.env.MONGODB_URL || 'mongodb://mongodb:27017/amazona', {

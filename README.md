@@ -56,3 +56,9 @@ Open `client/.env` then edit it with your settings. You will need:
 ## Running the project
 
     $ docker-compose up -d
+
+
+## Get Data
+
+Go to this url for add data to the Database:
+http://localhost:5000/api/products/seed

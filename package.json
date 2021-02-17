@@ -9,15 +9,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "type": "git",
-    "url": "git+ssh://git@gitlab.com/ApollonPlain/eco.git"
+    "type": "git"
   },
   "author": "ApollonPlain",
   "license": "ISC",
-  "bugs": {
-    "url": "https://gitlab.com/ApollonPlain/eco/issues"
-  },
-  "homepage": "https://gitlab.com/ApollonPlain/eco#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",
